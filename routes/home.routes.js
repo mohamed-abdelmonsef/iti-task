@@ -5,7 +5,8 @@ const auth = require('./auth')
 
 app.get('/home',async(req,res)=>{
     let records = await recordModel.find({})
-    res.json({message:records},records)
+    res.json(records)
+    res.json({message:'Done'})
 })
 
 
