@@ -11,7 +11,7 @@ app.get('/home',async(req,res)=>{
 
 app.delete('/handleDelete',async(req,res)=>{
     await recordModel.findOneAndDelete({_id:req.body.id})
-    res.json()
+    res.json({message:"deleteddddddd"})
 })
 
 
