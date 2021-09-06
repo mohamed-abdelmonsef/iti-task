@@ -9,9 +9,9 @@ app.get('/home',async(req,res)=>{
 })
 
 
-app.delete('/delete',async(req,res)=>{
+app.delete('/delete/:id',async(req,res)=>{
 
-    await recordModel.findOneAndDelete({Id:req.body.id})
+    await recordModel.findOneAndDelete({Id:req.params.id})
     res.json({message:"deleteddddddd"})
 })
 
