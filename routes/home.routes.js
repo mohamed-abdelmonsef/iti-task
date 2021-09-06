@@ -5,7 +5,7 @@ const auth = require('./auth')
 
 app.get('/home',async(req,res)=>{
     let records = await recordModel.find({})
-    res.json({Data:records})
+    res.json(records)
 })
 
 app.delete('/handleDelete',async(req,res)=>{
