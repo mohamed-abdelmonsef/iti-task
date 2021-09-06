@@ -9,10 +9,16 @@ app.get('/home',async(req,res)=>{
 })
 
 
-app.delete('/handleDelete',async(req,res)=>{
-    await recordModel.findOneAndDelete({_id:req.body.id})
+app.delete('/delete',async(req,res)=>{
+
+    await recordModel.findOneAndDelete({Id:req.body.id})
     res.json({message:"deleteddddddd"})
 })
 
+app.put('/edit',async(req,res)=>{
+    const {name,salary,dep,address} = req.body
+    await recordModel.findOneAndUpdate({Id:req.body.id},{name,salary,dep,address})
+    res.json({message:"editedddddddddd"})
+})
 
 module.exports = app
